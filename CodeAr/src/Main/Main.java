@@ -84,9 +84,11 @@ public class Main {
 		switch(i){
 			case 1:
 				Lr = new FabGladiador(nombre, tipo,vg);
+				break;
 			case 2:
 				System.out.println(tipo);
-				Lr = new FabArquero(nombre, tipo,va);			
+				Lr = new FabArquero(nombre, tipo,va);
+				break;
 		}
 	}
 	private static String SelectTipo() {
