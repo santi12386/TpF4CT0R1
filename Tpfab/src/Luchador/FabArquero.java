@@ -6,6 +6,8 @@ import java.util.Vector;
 import Armadura.ArmLigera;
 import Armas.Arco;
 import Armas.ArcoLargo;
+import Armas.Arma;
+import Armas.ArmaTipo;
 import Armas.Crossbow;
 import Armas.Shortbow;
 
@@ -13,37 +15,27 @@ import Armas.Shortbow;
 
 public class FabArquero implements FabricaLuchador{
 	
-	private String nombre;
-	private Arco arco;
-	private ArmLigera arml;
 	
-	public FabArquero(String nombre, String tipo,Vector va){
-		this.nombre=nombre;
-		if((this.arco=PonerArma(tipo))==null){
-			System.out.println("Error");
-		}
-		this.arml=PonerArmadura();
-		va.add(this);
-	}
+	public Arma PonerArma(ArmaTipo tipo){
 	
-	public Arco PonerArma(String tipo){
+		Arma arm=null;
 		
 		switch(tipo){
-			case "1":
-				this.arco=new ArcoLargo();
+			case ArcoLargo:
+				arm=new ArcoLargo();
 				break;
-			case "2":
-				this.arco=new Shortbow();
+			case Shortbow:
+				arm=new Shortbow();
 				break;
-			case "3":
-				this.arco = new Crossbow();
+			case Crossbow:
+				arm= new Crossbow();
 				break;
 			default:
 				System.out.println("No existe ese tipo");
-				arco = null;
+				arm = null;
 				
 		}
-		return arco;
+		return arm;
 		
 	}
 	public ArmLigera PonerArmadura(){
@@ -51,9 +43,9 @@ public class FabArquero implements FabricaLuchador{
 		return arml1;
 		
 	}
-	public String toString()
+	/*public String toString()
 	{
 		return "Nombre: "+nombre+" Arco: "+arco.tipo+" "+"Armadura: Ligera";
 		
-	}
+	}*/
 }

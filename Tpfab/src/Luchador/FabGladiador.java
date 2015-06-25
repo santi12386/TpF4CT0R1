@@ -4,6 +4,8 @@ import java.util.Scanner;
 import java.util.Vector;
 
 import Armadura.ArmPesada;
+import Armas.Arma;
+import Armas.ArmaTipo;
 import Armas.Curva;
 import Armas.DobleFilo;
 import Armas.Espada;
@@ -13,37 +15,25 @@ import Armas.Larga;
 
 public class FabGladiador implements FabricaLuchador{
 	
-	private String nombre;
-	private Espada espada;
-	private ArmPesada armp;
 	
-	public FabGladiador(String nombre, String tipo,Vector vg){
-		this.nombre=nombre;
-		if((this.espada=PonerArma(tipo))==null){
-			System.out.println("Error");
-		}
-		this.armp=PonerArmadura();
-		vg.add(this);
-	}
-	
-	public Espada PonerArma(String tipo){
-		
+	public Arma PonerArma(ArmaTipo tipo){
+		Arma arm=null;
 		switch(tipo){
-			case "1":
-				this.espada=new DobleFilo();
+			case DobleFilo:
+				arm=new DobleFilo();
 				break;
-			case "2":
-				this.espada=new Larga();
+			case Larga:
+				arm=new Larga();
 				break;
-			case "3":
-				this.espada=new Curva();
+			case Curva:
+				arm=new Curva();
 				break;
 			default:
 				System.out.println("No existe ese tipo");
-				espada = null;
+				arm = null;
 				
 		}
-		return espada;	
+		return arm;	
 	}
 	public ArmPesada PonerArmadura(){
 		
@@ -51,11 +41,11 @@ public class FabGladiador implements FabricaLuchador{
 		return armp1;
 		
 	}
-	public String toString()
+	/*public String toString()
 	{
 		return "Nombre: "+nombre+" Espada: "+espada.tipo+" "+"Armadura: Pesada";
 		
-	}
+	}*/
 
 
 }

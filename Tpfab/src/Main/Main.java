@@ -3,9 +3,14 @@ package Main;
 import java.util.Scanner;
 import java.util.Vector;
 
+import Armas.ArmaTipo;
+import Luchador.Arquero;
 import Luchador.FabArquero;
 import Luchador.FabGladiador;
 import Luchador.FabricaLuchador;
+import Luchador.Gladiador;
+import Luchador.Luchador;
+import Luchador.LuchadorTipo;
 
 
 public class Main {
@@ -73,9 +78,10 @@ public class Main {
 	}
 	private static void CrearLuchador(int i) {
 		Scanner sc = new Scanner(System.in);
-		FabricaLuchador Lr = null;
-		String tipo = null;
-		tipo=SelectTipo();
+		Luchador Lr = null;
+		ArmaTipo tipo = null;
+		if(i==1)
+			tipo=SelectTipo(i);
 		if(tipo==null){
 			return;
 		}
@@ -83,32 +89,55 @@ public class Main {
 		String nombre = sc.next();
 		switch(i){
 			case 1:
-				Lr = new FabGladiador(nombre, tipo,vg);
+				Lr = new Gladiador(new FabGladiador());
 				break;
 			case 2:
-				System.out.println(tipo);
-				Lr = new FabArquero(nombre, tipo,va);
+				Lr = new Arquero(new FabArquero());
 				break;
 		}
 	}
-	private static String SelectTipo() {
+	private static ArmaTipo SelectTipo(int i) {
 		Scanner sc = new Scanner(System.in);
 		int tipo = 0;
-		String tip;
-		while(true){
+		ArmaTipo tip=null;
+		while(tipo==0){
 			System.out.println("Elija tipo de arma: 1, 2, 3");
 			try{
 				tipo = sc.nextInt();
 			}catch(Exception e){
 				System.out.println("Opcion invalida");
-				return null;
+				tipo=0;
 			}
 			if((tipo<1) || (tipo>3)){
 				System.out.println("Opcion invalida");
-				return null;
+				tipo=0;
 			}
-			tip=Integer.toString(tipo);
-			return tip;
 		}
+		if(i==2){
+			switch(tipo){
+			case 1:
+				tip=ArmaTipo.ArcoLargo;
+				break;
+			case 2:
+				tip=ArmaTipo.Crossbow;
+				break;
+			case 3:
+				tip=ArmaTipo.Shortbow;
+				break;
+			}
+		}else if(i==1){
+			switch(tipo){
+			case 1:
+				tip=ArmaTipo.Larga;
+				break;
+			case 2:
+				tip=ArmaTipo.Curva;
+				break;
+			case 3:
+				tip=ArmaTipo.DobleFilo;
+				break;
+			}
+		}
+		return tip;
 	}
 }
