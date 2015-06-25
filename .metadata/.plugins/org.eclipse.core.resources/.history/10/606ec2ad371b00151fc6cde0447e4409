@@ -53,7 +53,7 @@ public class FabGladiador implements FabricaLuchador{
 	}
 	public String toString()
 	{
-		return "Nombre: "+nombre+" Espada: "+espada.tipo+" "+"Armadura: Pesada";
+		return nombre+" "+espada.tipo+" "+"Armadura Pesada";
 		
 	}
 
