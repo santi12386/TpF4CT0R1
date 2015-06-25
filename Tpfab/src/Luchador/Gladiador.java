@@ -12,6 +12,5 @@ public class Gladiador extends Luchador{
 		this.arma = fabrica.PonerArma(tipo);
 		this.armadura=fabrica.PonerArmadura();
 	}
-
 	
 }
