@@ -7,6 +7,7 @@ public class Gladiador extends Luchador{
 	
 	public Gladiador(FabricaLuchador fabrica){
 		this.fabrica = fabrica;
+		this.vida = 25;
 	}
 
 	public void setear(ArmaTipo tipo) {

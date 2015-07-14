@@ -7,6 +7,7 @@ import Armas.ArmaTipo;
 public abstract class Luchador {
 	
 	protected Arma arma;
+	protected int vida;
 	protected Armadura armadura;
 	protected FabricaLuchador fabrica;
 	protected String nombre;
