@@ -15,8 +15,8 @@ import Luchador.LuchadorTipo;
 
 public class Main {
 
-	public static Vector<FabGladiador> vg = new Vector<FabGladiador>();
-	public static Vector<FabArquero> va = new Vector<FabArquero>();
+	public static Vector<Gladiador> vg = new Vector<Gladiador>();
+	public static Vector<Arquero> va = new Vector<Arquero>();
 	
 	public static void main(String[] args) {
 		while(true){
@@ -62,14 +62,14 @@ public class Main {
 	private static void VerLuchador(int i) {
 		if(i==1)
 		{
-			for(FabGladiador luchador:vg)
+			for(Gladiador luchador:vg)
 			{
-				System.out.println(luchador.toString());
+				System.out.println(luchador.nombre());
 			}
 		}
 		else
 		{
-			for(FabArquero luchador1:va)
+			for(Arquero luchador1:va)
 			{
 				System.out.println(luchador1.toString());
 			}
@@ -89,10 +89,10 @@ public class Main {
 		String nombre = sc.next();
 		switch(i){
 			case 1:
-				Lr = new Gladiador(new FabGladiador());
+				Lr = new Gladiador(new FabGladiador(), tipo, nombre);
 				break;
 			case 2:
-				Lr = new Arquero(new FabArquero());
+				Lr = new Arquero(new FabArquero(), tipo, nombre);
 				break;
 		}
 	}
