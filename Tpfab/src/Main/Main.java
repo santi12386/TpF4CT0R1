@@ -19,62 +19,8 @@ public class Main {
 	public static Vector<FabArquero> va = new Vector<FabArquero>();
 	
 	public static void main(String[] args) {
-		while(true){
-			Menu();
-		}
-	}
-	public static void Menu(){
-		Scanner sc = new Scanner(System.in);
-		int opc=0;
-		while(opc!=4){
-			System.out.println("1) Crear Gladiador");
-			System.out.println("2) Crear Arquero");
-			System.out.println("3) Ver Gladiadores");
-			System.out.println("4) Ver Arqueros");
-			System.out.println("5) Salir");
-			opc = sc.nextInt();
-			switch(opc){
-			case 1:
-				CrearLuchador(1);
-				break;
-				
-			case 2:
-				CrearLuchador(2);
-				break;
-				
-			case 3:
-				VerLuchador(1);
-				break;
-				
-			case 4:
-				VerLuchador(2);
-				break;
-				
-			case 5:
-				System.exit(1);
-				
-			default:
-				System.out.println("Opcion invalida!");
-				
-			}
-		}
-	}
-	private static void VerLuchador(int i) {
-		if(i==1)
-		{
-			for(FabGladiador luchador:vg)
-			{
-				System.out.println(luchador.toString());
-			}
-		}
-		else
-		{
-			for(FabArquero luchador1:va)
-			{
-				System.out.println(luchador1.toString());
-			}
-		}
-		
+		CrearLuchador(1);
+		CrearLuchador(2);
 	}
 	private static void CrearLuchador(int i) {
 		Scanner sc = new Scanner(System.in);
@@ -85,14 +31,14 @@ public class Main {
 		if(tipo==null){
 			return;
 		}
-		System.out.println("Escriba el nombre: ");
-		String nombre = sc.next();
 		switch(i){
 			case 1:
-				Lr = new Gladiador(new FabGladiador());
+				String nombre = "Gladiador";
+				Lr = new Gladiador(new FabGladiador(), nombre);
 				break;
 			case 2:
-				Lr = new Arquero(new FabArquero());
+				String nombre2 = "Arquero";
+				Lr = new Arquero(new FabArquero(), nombre2);
 				break;
 		}
 	}

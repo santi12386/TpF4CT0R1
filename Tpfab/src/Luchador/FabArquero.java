@@ -43,9 +43,4 @@ public class FabArquero implements FabricaLuchador{
 		return arml1;
 		
 	}
-	/*public String toString()
-	{
-		return "Nombre: "+nombre+" Arco: "+arco.tipo+" "+"Armadura: Ligera";
-		
-	}*/
 }
