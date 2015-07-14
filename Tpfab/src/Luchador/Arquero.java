@@ -8,7 +8,6 @@ public class Arquero extends Luchador{
 	
 	public Arquero(FabricaLuchador fabrica){
 		this.fabrica = fabrica;
-		this.vida = 20;
 	}
 
 	public void setear(ArmaTipo tipo) {
