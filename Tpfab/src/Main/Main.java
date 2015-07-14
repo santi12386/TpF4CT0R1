@@ -1,5 +1,6 @@
 package Main;
 
+import java.util.Random;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -18,25 +19,31 @@ public class Main {
 	public static Vector<Gladiador> vg = new Vector<Gladiador>();
 	public static Vector<Arquero> va = new Vector<Arquero>();
 	public static void main(String[] args) {
-		CrearLuchador(1);
-		CrearLuchador(2);
+		CrearLuchador();
+		System.out.println(" ");
+		CrearLuchador();
 	}
-	private static void CrearLuchador(int i) {
+	private static void CrearLuchador() {
 		Luchador Lr = null;
 		ArmaTipo tipo = null;
 		String nombre = null;
-		switch(i){
-			case 1:
+		LuchadorTipo lt = LuchadorTipo.getRandomLuchador();
+		
+		switch(lt)
+		{
+			case GLADIADOR:
 				nombre = "Gladiador";
 				tipo = ArmaTipo.Larga;
 				Lr = new Gladiador(new FabGladiador(), tipo, nombre);
 				vg.add((Gladiador) Lr);
 				break;
-			case 2:
+			case ARQUERO:
 				nombre = "Arquero";
 				tipo = ArmaTipo.ArcoLargo;
 				Lr = new Arquero(new FabArquero(), tipo, nombre);
 				va.add((Arquero) Lr);
+				break;
+		default:
 				break;
 		}
 	}
