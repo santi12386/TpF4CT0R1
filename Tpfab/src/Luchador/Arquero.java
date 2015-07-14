@@ -1,5 +1,6 @@
 package Luchador;
 
+import Armas.Arco;
 import Armas.ArmaTipo;
 
 
@@ -13,6 +14,4 @@ public class Arquero extends Luchador{
 		this.arma = fabrica.PonerArma(tipo);
 		this.armadura=fabrica.PonerArmadura();
 	}
-
-	
 }
