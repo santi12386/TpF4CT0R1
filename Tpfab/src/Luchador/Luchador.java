@@ -10,7 +10,7 @@ public abstract class Luchador {
 	protected int vida;
 	protected Armadura armadura;
 	protected FabricaLuchador fabrica;
-	protected String nombre;
+	public String nombre;
 	
 	public abstract void setear(ArmaTipo tipo);
 

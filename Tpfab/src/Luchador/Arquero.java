@@ -6,8 +6,9 @@ import Armas.ArmaTipo;
 
 public class Arquero extends Luchador{
 	
-	public Arquero(FabricaLuchador fabrica, String nombre){
+	public Arquero(FabricaLuchador fabrica, ArmaTipo tipo, String nombre){
 		this.fabrica = fabrica;
+		this.setear(tipo);
 		this.vida = 20;
 		this.nombre = nombre;
 	}
