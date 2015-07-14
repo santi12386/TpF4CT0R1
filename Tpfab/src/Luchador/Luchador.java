@@ -9,7 +9,7 @@ public abstract class Luchador {
 	protected Arma arma;
 	protected Armadura armadura;
 	protected FabricaLuchador fabrica;
-	protected String nombre;
+	public String nombre;
 	
 	public abstract void setear(ArmaTipo tipo);
 

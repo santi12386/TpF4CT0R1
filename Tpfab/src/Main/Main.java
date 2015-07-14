@@ -64,14 +64,14 @@ public class Main {
 		{
 			for(Gladiador luchador:vg)
 			{
-				System.out.println(luchador.nombre());
+				System.out.println(luchador.nombre);
 			}
 		}
 		else
 		{
 			for(Arquero luchador1:va)
 			{
-				System.out.println(luchador1.toString());
+				System.out.println(luchador1.nombre);
 			}
 		}
 		
@@ -90,9 +90,11 @@ public class Main {
 		switch(i){
 			case 1:
 				Lr = new Gladiador(new FabGladiador(), tipo, nombre);
+				vg.add((Gladiador) Lr);
 				break;
 			case 2:
 				Lr = new Arquero(new FabArquero(), tipo, nombre);
+				va.add((Arquero) Lr);
 				break;
 		}
 	}
