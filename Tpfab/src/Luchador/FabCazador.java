@@ -9,7 +9,7 @@ import Armas.Larga;
 
 
 
-public class FabGladiador implements FabricaLuchador{
+public class FabCazador implements FabricaLuchador{
 	
 	
 	public Arma PonerArma(ArmaTipo tipo){

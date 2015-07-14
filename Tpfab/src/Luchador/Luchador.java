@@ -14,7 +14,7 @@ public abstract class Luchador {
 	public abstract void setear(ArmaTipo tipo);
 	public String toString()
 	{
-		return "Nombre: "+nombre+" Espada: "+espada.tipo+" "+"Armadura: Pesada";
+		return "Nombre: "+nombre+" Espada: "+arma.tipo+" "+"Armadura: Pesada";
 		
 	}
 }
