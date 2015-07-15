@@ -1,5 +1,6 @@
 package Main;
 
+import java.util.Random;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -19,9 +20,13 @@ public class Main {
 	public static Vector<Arquero> va = new Vector<Arquero>();
 	
 	public static void main(String[] args) {
+		Random random = new Random();
 		CrearLuchador();
-		System.out.println(" ");
 		CrearLuchador();
+		CrearLuchador();
+		CrearLuchador();
+		va.get(random.nextInt(va.size())).visualizarObjetivo();
+		vg.get(random.nextInt(va.size())).visualizarObjetivo();
 	}
 	private static void CrearLuchador() {
 		Luchador Lr = null;
