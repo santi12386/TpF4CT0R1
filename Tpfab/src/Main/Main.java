@@ -37,13 +37,15 @@ public class Main {
 				Lr = new Gladiador(new FabGladiador(), tipo, nombre);
 				vg.add((Gladiador) Lr);
 				break;
+			
 			case ARQUERO:
 				nombre = "Arquero";
 				tipo = ArmaTipo.ArcoLargo;
 				Lr = new Arquero(new FabArquero(), tipo, nombre);
 				va.add((Arquero) Lr);
 				break;
-		default:
+			
+			default:
 				break;
 		}
 	}
