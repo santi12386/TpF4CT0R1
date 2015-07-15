@@ -1,5 +1,5 @@
 package Luchador;
 
-public class StratCerca {
+public class StratCerca extends Strategy{
 
 }
