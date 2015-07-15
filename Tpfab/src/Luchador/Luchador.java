@@ -3,7 +3,6 @@ package Luchador;
 
 import java.util.Random;
 
-import javax.xml.bind.ValidationEvent;
 
 import Armadura.ArmLigera;
 import Armadura.ArmPesada;
@@ -13,13 +12,17 @@ import Armas.Arma;
 import Armas.ArmaTipo;
 import Armas.Espada;
 import Main.Main;
+import Strategy.Strategy;
+import Strategy.StratCerca;
+import Strategy.StratMedia;
+import Strategy.StratDistancia;
 
 public abstract class Luchador{
 	
-	protected Arma arma;
+	public Arma arma;
 	protected int vida;
 	protected Armadura armadura;
-	protected FabricaLuchador fabrica;
+	public FabricaLuchador fabrica;
 	public String nombre;
 	protected Strategy strat;
 	protected boolean estado;
@@ -81,11 +84,14 @@ public abstract class Luchador{
 		case 0:
 			if(this instanceof Arquero && Main.va.size() == 1){
 				lr = Main.vg.get(random.nextInt(Main.vg.size()));
-				System.out.println("\nSe encontro un luchador");
+				if(lr.estado)
+					System.out.println("\nSe encontro un luchador");
+				else
+					lr=null;
 				break;
 			}
 			lr = Main.va.get(random.nextInt(Main.va.size()));
-			if((this==lr)||(!this.estado)){
+			if((this==lr)||(!lr.estado)){
 				visualizarObjetivo();
 				return;
 			}
@@ -95,18 +101,24 @@ public abstract class Luchador{
 		case 1:
 			if(this instanceof Gladiador && Main.vg.size() == 1){
 				lr = Main.va.get(random.nextInt(Main.va.size()));
-				System.out.println("\nSe encontro un luchador");
+				if(lr.estado)
+					System.out.println("\nSe encontro un luchador");
+				else
+					lr=null;
 				break;
 			}
 			lr = Main.vg.get(random.nextInt(Main.va.size()));
-			if((this==lr)||(!this.estado)){
+			if((this==lr)||(!lr.estado)){
 				visualizarObjetivo();
 				return;
 			}
 			System.out.println("\nSe encontro un luchador");
 			break;
 			
-		}System.out.println("El objetivo es el "+lr.toString());
+		}if(lr!=null)
+			System.out.println("El objetivo es el "+lr.toString());
+		else
+			System.out.println("No se encontraron rivales vivos");
 		
 		while(lr.vida>0){
 			switch(random.nextInt(2)+1){

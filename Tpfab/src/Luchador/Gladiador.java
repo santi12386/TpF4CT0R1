@@ -9,7 +9,7 @@ public class Gladiador extends Luchador{
 		System.out.println("\nCreando FabGladiador");
 		this.fabrica = fabrica;
 		this.setear(tipo);
-		this.vida = 250;
+		this.vida = 15;
 		this.nombre = nombre;
 		this.estado = true;
 		System.out.println("Gladiador creado");

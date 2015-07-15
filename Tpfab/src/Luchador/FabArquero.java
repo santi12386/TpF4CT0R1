@@ -1,10 +1,7 @@
 package Luchador;
 
-import java.util.Scanner;
-import java.util.Vector;
 
 import Armadura.ArmLigera;
-import Armas.Arco;
 import Armas.ArcoLargo;
 import Armas.Arma;
 import Armas.ArmaTipo;

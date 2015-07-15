@@ -1,4 +1,6 @@
-package Luchador;
+package Strategy;
+
+import Luchador.Luchador;
 
 public abstract class Strategy {
 	public void atacar(Luchador atacante, Luchador enemigo){

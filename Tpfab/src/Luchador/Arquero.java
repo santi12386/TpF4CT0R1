@@ -10,7 +10,7 @@ public class Arquero extends Luchador{
 		System.out.println("\nCreando FabArquero");
 		this.fabrica = fabrica;
 		this.setear(tipo);
-		this.vida = 200;
+		this.vida = 10;
 		this.nombre = nombre;
 		this.estado = true;
 		System.out.println("Arquero creado");

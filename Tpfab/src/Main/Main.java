@@ -1,14 +1,12 @@
 package Main;
 
 import java.util.Random;
-import java.util.Scanner;
 import java.util.Vector;
 
 import Armas.ArmaTipo;
 import Luchador.Arquero;
 import Luchador.FabArquero;
 import Luchador.FabGladiador;
-import Luchador.FabricaLuchador;
 import Luchador.Gladiador;
 import Luchador.Luchador;
 import Luchador.LuchadorTipo;

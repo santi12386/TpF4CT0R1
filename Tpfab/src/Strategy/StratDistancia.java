@@ -1,6 +1,9 @@
-package Luchador;
+package Strategy;
 
 import Armas.ArmaTipo;
+import Luchador.Arquero;
+import Luchador.Gladiador;
+import Luchador.Luchador;
 
 public class StratDistancia extends Strategy {
 
