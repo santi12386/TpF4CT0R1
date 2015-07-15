@@ -14,7 +14,11 @@ public abstract class Luchador {
 	
 	public abstract void setear(ArmaTipo tipo);
 	
-	public herido(Arma)
+	public void herido(Arma){
+		
+	}
 	
-	public Arma GetArma
+	public Arma GetArma(){
+		return this.arma;
+	}
 }
