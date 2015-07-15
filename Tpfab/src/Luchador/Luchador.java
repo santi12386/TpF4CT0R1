@@ -18,7 +18,7 @@ public abstract class Luchador {
 		
 	}
 	
-	public Arma GetArma(){
+	public Arma getArma(){
 		return this.arma;
 	}
 }
