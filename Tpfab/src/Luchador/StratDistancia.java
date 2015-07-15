@@ -1,11 +1,15 @@
 package Luchador;
 
+import Armas.ArmaTipo;
+
 public class StratDistancia extends Strategy {
 
-	@Override
 	public void setArma(Luchador atacante) {
-		// TODO Auto-generated method stub
-		
+		if(atacante instanceof Gladiador){
+			atacante.arma = atacante.fabrica.PonerArma(ArmaTipo.Lanza);
+		}else{
+			atacante.arma = atacante.fabrica.PonerArma(ArmaTipo.ArcoLargo);
+		}
 	}
 
 }
