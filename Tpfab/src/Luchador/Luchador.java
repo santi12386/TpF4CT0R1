@@ -13,5 +13,8 @@ public abstract class Luchador {
 	public String nombre;
 	
 	public abstract void setear(ArmaTipo tipo);
-
+	
+	public herido(Arma)
+	
+	public Arma GetArma
 }
