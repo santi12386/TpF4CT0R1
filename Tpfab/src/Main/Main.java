@@ -1,6 +1,5 @@
 package Main;
 
-import java.util.Random;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -18,6 +17,7 @@ public class Main {
 
 	public static Vector<Gladiador> vg = new Vector<Gladiador>();
 	public static Vector<Arquero> va = new Vector<Arquero>();
+	
 	public static void main(String[] args) {
 		CrearLuchador();
 		System.out.println(" ");
